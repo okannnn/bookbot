@@ -20,11 +20,19 @@ def import_file_contents(path):
     finally:
         file.close()
 
+def wordCount(file):
+    newline_stripped_file = file.replace("\n", " ")
+    space_delimited = newline_stripped_file.split(" ")
+    while('' in space_delimited):
+        space_delimited.remove('')
+    return len(space_delimited)
 
 
 def main():
     book_path = "./books/frankenstein.txt"
     book = import_file_contents(book_path)
-    print(book)
+    #print(book)
+    word_count = wordCount(book)
+    print(f"there are {word_count} words in this document")
 
 main()
