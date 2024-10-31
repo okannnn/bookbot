@@ -20,12 +20,9 @@ def import_file_contents(path):
     finally:
         file.close()
 
-def wordCount(file):
-    newline_stripped_file = file.replace("\n", " ")
-    space_delimited = newline_stripped_file.split(" ")
-    while('' in space_delimited):
-        space_delimited.remove('')
-    return len(space_delimited)
+def wordCount(text):
+    count = text.split()
+    return len(count)
 
 
 def main():
