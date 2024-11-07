@@ -1,10 +1,3 @@
-### open a stated file in books dir.
-#https://www.geeksforgeeks.org/print-the-content-of-a-txt-file-in-python/
-#with open("./books/frankenstein.txt", 'r') as file:
-#    file_content = file.read()
-#    file.close()
-
-#print(file_content)
 
 
 def import_file_contents(path):
@@ -24,6 +17,21 @@ def wordCount(text):
     count = text.split()
     return len(count)
 
+def characterProcess(text):
+    characterDict = {}
+    for i in text:
+        j = i.lower()
+        #print(j)
+        if j in characterDict:
+            update_value = characterDict[j] + 1
+            characterDict.update({j:update_value})
+            #print("updated")
+        else:
+            characterDict.update({j:1})
+            #print("Value Added")
+    #print(characterDict)
+    
+
 
 def main():
     book_path = "./books/frankenstein.txt"
@@ -31,5 +39,7 @@ def main():
     #print(book)
     word_count = wordCount(book)
     print(f"there are {word_count} words in this document")
+
+    characterProcess(book)
 
 main()
