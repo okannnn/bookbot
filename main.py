@@ -7,7 +7,10 @@ def get_book_text(filepath):
     
     return book
 
-
+def count_words(string):
+    array = string.split()
+    noWords = len(array)
+    return noWords
 
 
 
@@ -16,7 +19,8 @@ def get_book_text(filepath):
 def main():
 
     bookString = get_book_text("./books/frankenstein.txt")
-    print(bookString)
-    
+    #print(bookString)
+    noWords = count_words(bookString)
+    print(f"Found {noWords} total words")
 
 main()
