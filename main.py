@@ -1,4 +1,6 @@
 
+from stats import count_words
+
 
 def get_book_text(filepath):
     
@@ -7,10 +9,7 @@ def get_book_text(filepath):
     
     return book
 
-def count_words(string):
-    array = string.split()
-    noWords = len(array)
-    return noWords
+
 
 
 
